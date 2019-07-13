@@ -1,0 +1,36 @@
+.wrapper{
+	width:50%;
+	position: relative;
+	margin:auto;
+	top:50px;
+	line-height: 30px;
+}
+
+.container{
+	width:100%;
+	
+}
+body{
+	background-color: rgb(0,153,255);
+}
+
+button{
+	border: 5px solid white;
+	margin: auto;
+	border-radius: 10px;
+	margin-top:50px;
+	display: block;
+	width:200px;
+	height: 60px;
+	outline: none;
+	background-color: pink;
+}
+
+p{
+	position: relative;
+	margin:auto;
+	left:220px;
+	font-size: 50;
+	top:20px;
+	
+}

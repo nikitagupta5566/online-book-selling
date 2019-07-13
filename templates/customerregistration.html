@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'shop/registration.css' %}">
+
+	<div class="limiter">
+		<div class="container">
+			<div class="wrapper">
+				<div class="picture">
+					<img src="{% static 'shop/user.png' %}" style="position:relative; left:130px;top:100px; width: 100.79px; height: 120px"/>
+					<h1 style="position: relative; top:160px ;display:block;left:120px">SIGN UP</h1> 
+				</div>
+                <div class="logincontainer">
+                
+                    
+                         <div class="panel-body">
+                          <h3>Register</h3>
+                            {% if error_message %}
+                                <p><strong>{{ error_message }}</strong></p>
+                             {% endif %}
+                             <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {% include 'form_template.html' %}
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-success" >Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+				<!--<div class="logincontainer">
+                    <form action="" class="form" method="post">
+                        <input class=input type=text name=eid placeholder="Email ID"  />
+    <input class=input type=password name=pwd placeholder="Password" />
+    <input class=input type=text name=cname  placeholder="Customer Name" />
+    <textarea class=input rows=3 cols=20 name=address placeholder="Address"></textarea>
+    <input class=input type=text name=city placeholder="City" />
+    <input class=input type=text name=state placeholder="State" />
+    <input class=input type=text name=contactno placeholder="Contact No." />-->
+                        <!--<div class="input">
+                            
+                            <label for="id_subject">Subject:</label>
+                           
+                        </div>
+                        
+                        {% csrf_token %}
+                        {{form}}
+
+                        <input class="signup" type="submit" value="SIGN UP" />-->
+                    </form>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

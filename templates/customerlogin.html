@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+	{% block title %}Login{% endblock %}
+{% block body %}
+{% load staticfiles %}
+
+{% if errors %}
+<p>{{errors}}</p>
+{% endif %}
+
+{{message}}
+
+<link rel="stylesheet" type="text/css" href="{% static 'shop/customerlogin.css' %}">
+
+<div class=limiter>
+	<div class=container style="background-image:url('{% static "shop/images/bg-01.jpg" %}')">
+		<div class=wrapper>
+			<form class=form action="{% url 'login' %}" method="post">
+				{% csrf_token %}
+				<span id=login> 
+					Login
+				</span>
+
+				<div class=inputwrapper data-validate="Email ID is required" style="margin-top: 70px">
+					<span style="display:block" class=inputlabel >Email ID</span>
+					<i class="fa fa-user" style="font-size:30px;color: red;margin-top: 20px;"></i>
+					<input class=input type="text" name="username" placeholder="Enter Email ID" value="{{username}}" />
+				</div>
+
+				<div class=inputwrapper data-validate="password is required" style="margin-top: 50px">
+					<span class=inputlabel >Password</span>
+					<i class="fa fa-lock" style="font-size:30px;color: red;margin-top: 20px;"></i>
+					<input class=input type="password" name="password" placeholder="Enter Password" value="{{password}}" />
+				</div>
+				<div class=buttonwrapper>
+					<button class=button>Login</button>
+				</div>
+			    
+			</form>
+			</div>
+		</div>
+</div>
+{% endblock %}

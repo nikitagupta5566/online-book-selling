@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{% block body %}
+
+<div class="albums-container container-fluid">
+	
+	<!-- books -->
+	<div class="row">
+		{% for order in order_list %}
+
+		<div class="col-sm-4 col-lg-2">
+			<div class="thumbnail">
+				
+				<img src="{{order.book.item_image}}">	
+				<div class="caption">
+					<h2>{{order.book.name}}</h2>
+					<h4>Price:{{order.book.price}}</h4>
+					<h4>Author:{{order.book.author}}</h4>
+					<h4>Edition:{{order.book.edition}}</h4>
+					<h4>Language:{{order.book.Language}}</h4>
+					<!--<h4>Quantity: {{order.quantity}}</h4>-->
+					<h4>Description:<br>{{order.book.Description}}</h4>
+
+					<h4></h4>        
+				</div>
+			</div>
+		</div>
+		{% endfor %}	
+	</div>
+</div>
+				
+{% endblock %}

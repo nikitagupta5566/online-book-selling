@@ -1,0 +1,149 @@
+body{
+	height=100%;
+	font-family:Poppins-Regular, sans-serif;
+	background-repeat: no-repeat;
+	/*background-color: cyan;*/
+	background:url('images/background.png');
+}
+.navbar{
+	border-radius: 0;
+}
+#log{
+	align-content: center;
+	margin-left: 20%;
+	margin-top: 20%;
+	margin-right: 40%;
+	margin-bottom: 20%;
+	height:50%;
+	border:1px solid red;
+}
+
+td{
+	margin:10px;
+}
+
+#login{
+	display: block;
+	font-family: Poppins-Bold;
+	line-height: 1.2;
+	font-size: 39px;
+	text-align: center;
+}
+
+.wrapper{
+	margin-left:50px;
+}
+
+.limiter{
+	height:100%;
+	width: 100%;
+	margin: 0 auto;
+}
+
+body,html{
+	height: 100%;
+}
+
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+.container {
+  width: 100%;  
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.wrapper{
+	margin: auto;
+	align-content: center;
+	background-color: white;
+	padding-top: 50px;
+	border: hidden;
+	border-radius: 10px;
+	width: 500px;
+	height:700px;
+}
+
+form{
+	width:100%;
+	/*line-height: 4px;*/
+}
+
+#login{
+	display: block;
+	font-weight: bold;
+	font-family: Poppins-Bold
+	font-size:39px;
+	color: #333333;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.inputwrapper{
+	position: relative;
+	left:40px;
+	width:70%;
+	position: relative;
+	border-bottom: 2px solid #d9d9d9;
+}
+
+.inputlabel{
+	font-family: Poppins-Regular;
+    font-size: 20px;
+    color: #333333;
+    line-height: 1.5;
+    display: block;
+    position: relative;
+    left:10px;
+    
+}
+
+.input{
+	position: relative;
+	font-family: Poppins-Medium;
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.2;
+    width: 70%;
+    margin: auto;
+  height: 45px;
+  outline: none;
+  padding: 0 7px 0 43px;
+  border: none;
+  top:0;
+}
+
+.buttonwrapper{
+	height:2000px;
+	width: 100%;
+	line-height: 5;
+}
+
+.button{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	line-height: 1.5;
+	height: 50px;
+	width:350px;
+	border-radius: 40px;
+	box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+	background: #a64bf4;
+	background :-webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+
+}
+
+.button:hover{
+	background :-webkit-linear-gradient(right, #fc00ff, #00dbde , #fc00ff, #00dbde);
+}

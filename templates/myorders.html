@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% load staticfiles %}
+{% block body %}
+<div class="albums-container container-fluid">
+	{% csrf_token %}
+	<!-- books -->
+	<div class="row">
+		{% for order in object_list %}
+		<div class="col-sm-4 col-lg-2">
+			<div class="thumbnail">
+				
+				<div class="caption">
+					<h2>Order ID: {{order.order_no}}</h2>
+					<h4>Order Date: {{order.date}}</h4>
+					<h4>Order Status: {{order.status}}</h4>
+					<h4>Total Amount: {{order.amount}} </h4>
+
+					<a href="{% url 'orderdetails' order.order_no %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+					<a href="{% url 'cancelorder' order.order_no %}" class="btn btn-primary btn-sm" role="button">Cancel</a>
+
+				</div>
+			</div>
+		</div>
+		{% endfor %}	
+	</div>
+</div>
+	
+{% endblock %}

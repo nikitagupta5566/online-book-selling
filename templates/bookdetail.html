@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{% block body %}
+
+<div class="albums-container container-fluid">
+	
+	<!-- books -->
+	<div class="row">
+		<div class="col-sm-4 col-lg-2">
+			<div class="thumbnail">
+					<img src={{book.item_image}}>
+				<div class="caption">
+
+					<h2>{{book.name}}</h2>
+					<h4>Price:{{book.price}}</h4>
+					<h4>Author:{{book.author}}</h4>
+					<h4>Edition:{{book.edition}}</h4>
+					<h4>Language:{{book.Language}}</h4>
+					<h4>Quantity: {{book.quantity}}</h4>
+					<h4>Description:<br>{{book.Description}}</h4>
+
+					<h4></h4>        
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+				
+{% endblock %}

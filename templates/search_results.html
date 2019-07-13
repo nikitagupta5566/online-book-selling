@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% load staticfiles %}
+{% block body %}
+<div class="albums-container container-fluid">
+	{% csrf_token %}
+	<!-- books -->
+	<div class="row">
+		{% if not book %}
+		No books matches the given query
+		{% endif %}
+		{% for item in book %}
+		<div class="col-sm-4 col-lg-2">
+			<div class="thumbnail">
+				<a href="#">
+					<img src="{{item.item_image}}">	
+				</a>
+				<div class="caption">
+					<h2>{{item.name}}</h2>
+					<h4>Price:{{item.price}}</h4>
+					<h4>Author:{{item.author}}</h4>
+
+					<a href="{% url 'bookdetail' item.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+
+                            <!-- Add to cart -->
+                            <form action="{% url 'addtocart' item.id %}" method="post" style="display: inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="book_id" value="{{ item.id }}" />
+                                <button type="submit" class="btn btn-default btn-sm">
+                                    <img src="{% static 'shop/images/cart.png' %}" height="25" width="25">
+                                </button>
+                            </form>
+
+                            <!-- Add to wishlist -->
+                            <a href="#" class="btn btn-default btn-sm btn-favorite">
+                                <span class="glyphicon glyphicon-star {% if item %}active{% endif %}"></span>
+                            </a>
+
+				</div>
+			</div>
+		</div>
+		{% endfor %}	
+	</div>
+</div>
+	
+{% endblock %}

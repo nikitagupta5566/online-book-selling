@@ -1,0 +1,35 @@
+<html>
+<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'shop/adminhome.css' %}">
+</head>
+<body>
+<div class="container">
+	<div class="wrapper">
+		<p>Admin Home</p>
+		<!--<button><a href=itemsetup target=awork>ItemSetup</a></h1>
+		<h1><a href=stockupdate target=awork>StockUpdate</a></h1>
+		<h1><a href=customerlist target=awork>CustomerList</a></h1>
+		<h1><a href=stockregion target=awork>StockRegister</a></h1>
+		<h1><a href=signout target=awork>SignOut</a></h1>-->
+		<form action="itemsetup">
+		<input type="submit" value="Item Setup" />
+	    </form>
+	    <form action="stockupdate">
+	    <input type=submit value="Stock Update" />
+	    </form>
+	    <form action="customerlist">
+	    	<input type=submit value="Customer List" />
+	    </form>
+		<form action="stockregister">
+		<input type=submit  value="Stock Register" />
+	    </form>
+	    <form action="signout">
+	    <input type="submit" value="Sign Out" action="signout" />
+		</form>
+	
+	</div>
+<!--<iframe name=awork width=100% height=500></iframe>-->
+</div>
+</body>
+</html>

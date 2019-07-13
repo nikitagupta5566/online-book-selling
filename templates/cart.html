@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% load staticfiles %}
+{% block body %}
+
+{% if not items %}
+<p>Cart is empty</p>
+{% endif %}
+<div class="albums-container container-fluid">
+	
+	<!-- books -->
+	<div class="row">
+		{% for item in items %}
+		<div class="col-sm-4 col-lg-2">
+			<div class="thumbnail">
+				<a href="#">
+					<img src="{{item.book.item_image}}">	
+				</a>
+				<div class="caption">
+					<h2>{{item.book.name}}</h2>
+					<h4>Price: {{item.book.price}}</h4>
+					<h4>Quantity: {{item.quantity}}</h4>
+
+					<a href="{% url 'bookdetail' item.book.id %} " class="btn btn-primary btn-sm" role="button" style="margin: auto">Details</a>
+					
+					
+
+
+                    <!--<a href="#" class="btn btn-primary btn-sm" role="button">Add to wishlist</a>-->
+
+                    <form action="{% url 'removefromcart' item.book.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="book_id" value="{{ item.book.id }}" />
+                        <button type="submit" class="btn btn-default btn-sm">
+                        	<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;     
+                        </button>
+                      
+                    </form>
+                            
+				</div>
+			</div>
+		</div>
+		{% endfor %}	
+	</div>
+</div>
+
+{% if items %}
+<div>
+	<a href="{% url 'placeorder' %}" class="btn btn-primary btn-sm" role="button" style="margin-left: 50% ">Place Order</a>
+</div>
+{% endif %}
+					
+	
+{% endblock %}
